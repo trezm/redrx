@@ -1,0 +1,35 @@
+{
+  "name": "redrx",
+  "version": "1.0.0",
+  "description": "Observable Redux",
+  "main": "index.js",
+  "dependencies": {
+    "@reactivex/rxjs": "^5.0.0-beta.7"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "gulp-load-plugins": "^1.2.2",
+    "gulp-plumber": "^1.1.0",
+    "gulp-typescript": "^2.13.4",
+    "mocha": "^2.4.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trezm/redrx.git"
+  },
+  "keywords": [
+    "RxJS",
+    "Redux",
+    "Flux",
+    "Typescript"
+  ],
+  "author": "Pete Mertz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/trezm/redrx/issues"
+  },
+  "homepage": "https://github.com/trezm/redrx#readme"
+}
