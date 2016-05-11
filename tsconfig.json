@@ -1,7 +1,7 @@
 {
-  "version": "1.8.9",
+  "version": "1.6.0",
   "compilerOptions": {
-    "target": "ES5",
+    "target": "es5",
     "module": "commonjs",
     "declaration": true,
     "noImplicitAny": false,
@@ -13,6 +13,8 @@
     "rootDir": "./"
   },
   "exclude": [
-    "./node_modules"
+    "typings/browser.d.ts",
+    "typings/browser",
+    "node_modules"
   ]
 }

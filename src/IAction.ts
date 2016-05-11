@@ -1,5 +1,5 @@
 export interface IAction {
-  type: string
+  type: any
 }
 
 export default IAction;

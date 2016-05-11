@@ -1,22 +1,27 @@
 'use strict';
 
-var gulp = require('gulp');
-var plugins = require('gulp-load-plugins')();
-var tsProject = plugins.typescript.createProject('tsconfig.json', {
+const gulp = require('gulp');
+const plugins = require('gulp-load-plugins')();
+const tsProject = plugins.typescript.createProject('tsconfig.json', {
   typescript: require('typescript')
 });
+const merge = require('merge2');
 
 const OUTPUT_DIR = 'core/';
 
 gulp.task('build:dev:ts', function() {
-    return gulp.src(['src/**/*.ts', 'typings/**/*.ts'])
-      .pipe(plugins.plumber())
-      .pipe(plugins.typescript(tsProject))
-      .js.pipe(gulp.dest(OUTPUT_DIR));
+  const results = gulp.src(['./src/**/*.ts'])
+    .pipe(plugins.plumber())
+    .pipe(plugins.typescript(tsProject))
+
+  return merge([
+    results.dts.pipe(gulp.dest(OUTPUT_DIR)),
+    results.js.pipe(gulp.dest(OUTPUT_DIR))
+  ]);
 });
 
 gulp.task('run:test', ['build:dev:ts'], function() {
-  return gulp.src('./dist/**/*.spec.js', {
+  return gulp.src(OUTPUT_DIR + '**/*.spec.js', {
       read: false
     })
     .pipe(plugins.mocha())

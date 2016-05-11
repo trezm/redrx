@@ -1,6 +1,6 @@
 {
   "name": "redrx",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "Observable Redux",
   "main": "index.js",
   "dependencies": {
@@ -9,12 +9,15 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "gulp-load-plugins": "^1.2.2",
+    "gulp-mocha": "^2.2.0",
     "gulp-plumber": "^1.1.0",
     "gulp-typescript": "^2.13.4",
+    "merge2": "^1.0.2",
     "mocha": "^2.4.5"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "gulp build"
   },
   "repository": {
     "type": "git",

@@ -17,6 +17,16 @@ var Store = (function () {
             _this.state.next(_this.reducer(reduceable.state, reduceable.action));
         });
     }
+    Store.combineReducers = function (reducers) {
+        return function (state, action) {
+            var stateInProgress = {};
+            Object.keys(reducers).forEach(function (key) {
+                stateInProgress[key] = reducers[key](state && state[key], action);
+            });
+            return stateInProgress;
+        };
+    };
+    ;
     return Store;
 }());
 exports.Store = Store;
